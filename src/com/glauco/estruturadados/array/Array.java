@@ -1,7 +1,5 @@
 package com.glauco.estruturadados.array;
 
-import java.util.Arrays;
-
 public class Array {
     private String[] elementos;
     private int tamanho;
