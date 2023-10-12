@@ -1,4 +1,6 @@
-package com.glauco.cursoestruturas.array;
+package com.glauco.estruturadados.array;
+
+import java.util.Arrays;
 
 public class Array {
     private String[] elementos;
@@ -21,7 +23,7 @@ public class Array {
     } */
 
     // Método que verifica se o tamanho do array é maior que a capacidade do array.
-    /* public boolean function adiciona(String elemento) {
+    /* public boolean adiciona(String elemento) {
         if (this.tamanho < this.elementos.length) {
             this.elementos[this.tamanho] = elemento;
             this.tamanho++;
@@ -32,14 +34,23 @@ public class Array {
         return false;
     } */
 
-    // Método que verifica se o tamanho do array é maior que a capacidade do array.
-    public void function adiciona(String elemento) {
+    // Método que verifica se o tamanho do array é maior que a capacidade (total de elemtentos) do array.
+    public void adiciona(String elemento) throws Exception {
         if (this.tamanho < this.elementos.length) {
             this.elementos[this.tamanho] = elemento;
             this.tamanho++;
         } else {
             throw new Exception("Array já cheio, não é possível adicionar novos elementos!");
         }
+    }
 
+    
+    public int tamanho() {
+        return this.tamanho;
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(elementos);
     }
 }
