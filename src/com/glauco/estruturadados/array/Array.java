@@ -9,7 +9,7 @@ public class Array {
         this.tamanho = 0;
     }
 
-    // Método que funciona, porém apenas adiciona a quantidade de elementos informados,
+    // Funciona, porém apenas adiciona a quantidade de elementos informados,
     // podendo haver elementos vagos.
     /* public void adiciona(String elemento) {
         for (int i = 0; i < this.elementos.length; i++) {
@@ -20,8 +20,8 @@ public class Array {
         }
     } */
 
-    // Método que verifica se o tamanho do array é maior que a capacidade do array.
-    /* public boolean adiciona(String elemento) {
+    // Verifica se o tamanho do array é maior que a capacidade do array.
+    public boolean adiciona(String elemento) {
         if (this.tamanho < this.elementos.length) {
             this.elementos[this.tamanho] = elemento;
             this.tamanho++;
@@ -30,16 +30,24 @@ public class Array {
         }
         
         return false;
-    } */
+    }
 
     // Método que verifica se o tamanho do array é maior que a capacidade (total de elemtentos) do array.
-    public void adiciona(String elemento) throws Exception {
-        if (this.tamanho < this.elementos.length) {
-            this.elementos[this.tamanho] = elemento;
-            this.tamanho++;
-        } else {
-            throw new Exception("Array já cheio, não é possível adicionar novos elementos!");
-        }
+    // public void adiciona(String elemento) throws Exception {
+    //     if (this.tamanho < this.elementos.length) {
+    //         this.elementos[this.tamanho] = elemento;
+    //         this.tamanho++;
+    //     } else {
+    //         throw new Exception("Array já cheio, não é possível adicionar novos elementos!");
+    //     }
+    // }
+
+    public String busca(int posicao) {
+        if (!(posicao >= 0 && posicao < tamanho)){
+			throw new IllegalArgumentException("Posição inválida");
+		}
+
+        return this.elementos[posicao];
     }
 
     
