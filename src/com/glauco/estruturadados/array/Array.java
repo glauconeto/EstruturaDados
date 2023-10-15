@@ -67,6 +67,8 @@ public class Array {
      * @return boolean
      */
     public boolean adiciona(String elemento) {
+        aumentaCapacidade();
+        
         if (this.tamanho < this.elementos.length) {
             this.elementos[this.tamanho] = elemento;
             this.tamanho++;
@@ -77,10 +79,21 @@ public class Array {
         return false;
     }
 
+    /**
+     * Adiciona um elemento em qualquer posição.
+     * Itera os valores do array para que mova pra frente os itens existentes 
+     * para adicionar o elemento novo.
+     * 
+     * @param posicao
+     * @param elemento
+     * @return boolean
+     */
     public boolean adiciona(int posicao, String elemento) {
         if (!(posicao >= 0 && posicao < tamanho)){
 			throw new IllegalArgumentException("Posição inválida");
 		}
+
+        this.aumentaCapacidade();
 
         // Move todos os elementos
         for (int i = this.tamanho; i >= posicao; i--) {
@@ -91,6 +104,18 @@ public class Array {
         this.tamanho++;
 
         return true;
+    }
+
+    private void aumentaCapacidade() {
+        if (this.tamanho == this.elementos.length) {
+            String[] elementosNovos = new String[this.elementos.length * 2];
+
+            for (int i = 0; i < this.elementos.length; i++) {
+                elementosNovos[i] = this.elementos[i];
+            }
+
+            this.elementos = elementosNovos;
+        }
     }
 
     /**
