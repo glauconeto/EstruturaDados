@@ -42,6 +42,24 @@ public class Array {
         }
     } */
 
+    
+    /**
+     * Verifica se o tamanho do array é maior que a capacidade do array.
+     * 
+     * @param String elemento
+     * @return void
+     * 
+     * @throws Exception
+     */
+    // public void adiciona(String elemento) throws Exception {
+        //     if (this.tamanho < this.elementos.length) {
+    //         this.elementos[this.tamanho] = elemento;
+    //         this.tamanho++;
+    //     } else {
+    //         throw new Exception("Array já cheio, não é possível adicionar novos elementos!");
+    //     }
+    // }
+    
     /**
      * Verifica se o tamanho do array é maior que a capacidade do array.
      * 
@@ -59,22 +77,21 @@ public class Array {
         return false;
     }
 
-    /**
-     * Verifica se o tamanho do array é maior que a capacidade do array.
-     * 
-     * @param String elemento
-     * @return void
-     * 
-     * @throws Exception
-     */
-    // public void adiciona(String elemento) throws Exception {
-    //     if (this.tamanho < this.elementos.length) {
-    //         this.elementos[this.tamanho] = elemento;
-    //         this.tamanho++;
-    //     } else {
-    //         throw new Exception("Array já cheio, não é possível adicionar novos elementos!");
-    //     }
-    // }
+    public boolean adiciona(int posicao, String elemento) {
+        if (!(posicao >= 0 && posicao < tamanho)){
+			throw new IllegalArgumentException("Posição inválida");
+		}
+
+        // Move todos os elementos
+        for (int i = this.tamanho; i >= posicao; i--) {
+            this.elementos[i+1] = this.elementos[i];
+        }
+
+        this.elementos[posicao] = elemento;
+        this.tamanho++;
+
+        return true;
+    }
 
     /**
      * Busca um por um elemento no array, 
