@@ -17,5 +17,14 @@ public class Aula09 {
         array.remove(1);
 
         System.out.println(array);
+
+        System.out.println("Remover o elemento E");
+
+        int pos = array.busca("E");
+        if (pos > -1) {
+            array.remove(pos);
+        } else {
+            System.out.println("Elemento não existe  no vetor");
+        }
     }
 }
