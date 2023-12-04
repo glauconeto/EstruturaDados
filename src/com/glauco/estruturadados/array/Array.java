@@ -19,7 +19,7 @@ public class Array {
      * Inicializa o objeto com a capacidade passada e 
      * tamanho 0.
      * 
-     * @param capacidade
+     * @param int capacidade
      */
     public Array(int capacidade) {
         this.elementos = new String[capacidade];
@@ -27,7 +27,7 @@ public class Array {
     }
     
     /**
-     * Verifica se o tamanho do array é maior que a capacidade do array.
+     * Adiciona um elemento ao final do array.
      * 
      * @param String elemento
      * @return boolean
@@ -50,8 +50,8 @@ public class Array {
      * Itera os valores do array para que mova pra frente os itens existentes 
      * para adicionar o elemento novo.
      * 
-     * @param posicao
-     * @param elemento
+     * @param int posicao
+     * @param String elemento
      * @return boolean
      */
     public boolean adiciona(int posicao, String elemento) {
@@ -91,7 +91,7 @@ public class Array {
      * Busca um por um elemento no array, 
      * caso não exista, retorna uma exceção.
      * 
-     * @param posicao
+     * @param int posicao
      * @return
      */
     public String busca(int posicao) {
@@ -106,7 +106,7 @@ public class Array {
      * Realiza um algoritmo de busca sequencial para 
      * verificar se o elemento existe.
      * 
-     * @param elemento
+     * @param String elemento
      * @return
      */
     public int busca(String elemento) {

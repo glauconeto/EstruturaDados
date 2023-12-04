@@ -1,4 +1,4 @@
-package com.glauco.estruturadados.array;
+package com.glauco.estruturadados.array.teste;
 
 import java.util.ArrayList;
 
@@ -24,7 +24,7 @@ public class Aula12 {
         }
 
         int pos = arrayList.indexOf("B");
-        if (post > -1) {
+        if (pos > -1) {
             System.out.println("Elemento existe no array");
         } else {
             System.out.println("Elemento não existe no array");

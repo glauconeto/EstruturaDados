@@ -1,12 +1,8 @@
 package com.glauco.estruturadados.array;
 
-import java.lang.reflect.Array;
-
-// import java.lang.reflect.Array;
-
 public class List<T> {
     /**
-     * Array de elementos, do tipo string.
+     * Array de elementos, do tipo genérico.
      */
     private T[] elementos;
     /**
@@ -24,17 +20,6 @@ public class List<T> {
         this.elementos = (T[]) new Object[capacidade];
         this.tamanho = 0;
     }
-
-    /**
-     * Inicializa o objeto com a capacidade passada, e o tipo de classe.
-     * 
-     * @param capacidade
-     * @param tipoClasse
-     */
-    // public List(int capacidade, Class<T> tipoClasse) {
-    //     this.elementos = (T[]) Array.newInstance(tipoClasse, capacidade);
-    //     this.tamanho = 0;
-    // }
     
     /**
      * Verifica se o tamanho do array é maior que a capacidade do array.
@@ -80,6 +65,15 @@ public class List<T> {
         this.tamanho++;
 
         return true;
+    }
+
+    /**
+     * Pesquisa por um elemento e retorna true se existe.
+     * 
+     * @param String elemento
+     */
+    public boolean contem(T elemento) {
+        return busca(elemento) > -1;
     }
 
     /**
