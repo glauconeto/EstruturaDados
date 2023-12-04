@@ -95,6 +95,21 @@ public class List<T> {
         return this.busca(posicao);
     }
 
+    public void limpar() {
+        // Opção 1
+        // this.elementos = (T[]) new Object(this.elementos.length);
+
+        // Opção 2
+        // this.tamanho = 0;
+
+        // Opção 3
+        for (int i = 0; i < this.tamanho; i++) {
+            this.elementos[i] = null;
+        }
+
+        this.tamanho = 0;
+    }
+
     /**
      * Busca um por um elemento no array, 
      * caso não exista, retorna uma exceção.
