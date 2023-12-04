@@ -91,6 +91,10 @@ public class List<T> {
         }
     }
 
+    public T obtem(int posicao) {
+        return this.busca(posicao);
+    }
+
     /**
      * Busca um por um elemento no array, 
      * caso não exista, retorna uma exceção.
@@ -98,7 +102,7 @@ public class List<T> {
      * @param posicao
      * @return
      */
-    public Object busca(int posicao) {
+    public T busca(int posicao) {
         if (!(posicao >= 0 && posicao < tamanho)){
 			throw new IllegalArgumentException("Posição inválida");
 		}
