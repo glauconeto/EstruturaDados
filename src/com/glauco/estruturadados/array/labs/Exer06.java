@@ -220,14 +220,14 @@ public class Exer06 {
         }
     }
 
-    private static String leInformacao(String msg, Scanner scan) {
+    protected static String leInformacao(String msg, Scanner scan) {
         System.out.println(msg);
         String entrada = scan.nextLine();
 
         return entrada;
     }
 
-    private static int leInformacaoInt(String msg, Scanner scan) {
+    protected static int leInformacaoInt(String msg, Scanner scan) {
         boolean entradaValida = false;
         int num = 0;
 
@@ -248,7 +248,7 @@ public class Exer06 {
         return num;
     }
 
-    private static int obterOpcaoMenu(Scanner scan) {
+    protected static int obterOpcaoMenu(Scanner scan) {
         boolean entradaValida = false;
         int opcao = 0;
         String entrada;
