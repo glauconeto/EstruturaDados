@@ -63,7 +63,7 @@ public class Exer06 {
 
                     break;
                 case 11:
-                    imprimeVetor(lista);(lista);
+                    imprimeVetor(lista);
 
                     break;
                 default:
