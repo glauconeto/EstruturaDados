@@ -91,10 +91,20 @@ public class List<T> {
         }
     }
 
+    /**
+     * Obtém um item da lista.
+     * 
+     * @param posicao
+     * @return
+     */
     public T obtem(int posicao) {
         return this.busca(posicao);
     }
 
+    /**
+     * Limpa toda a lista, removendo os itens.
+     * 
+     */
     public void limpar() {
         // Opção 1
         // this.elementos = (T[]) new Object(this.elementos.length);
@@ -142,6 +152,12 @@ public class List<T> {
         return -1;
     }
 
+    /**
+     * Retorna o último índice da lista.
+     * 
+     * @param elemento
+     * @return
+     */
     public int ultimoIndice(T elemento) {
         int ultimaPos = -1;
         
@@ -171,6 +187,11 @@ public class List<T> {
         this.tamanho--;
     }
 
+    /**
+     * Remove um elemento
+     * 
+     * @param elemento
+     */
     public void remove(T elemento) {
         int pos = this.busca(elemento);
 
