@@ -1,5 +1,6 @@
 package com.glauco.estruturadados.array;
 
+//d
 public class List<T> {
     /**
      * Array de elementos, do tipo genérico.
