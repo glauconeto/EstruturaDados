@@ -1,8 +1,8 @@
 package com.glauco.estruturadados.stack;
 
 class EstruturaEstatica<T> {
-    private T[] elementos;
-    private int tamanho;
+    protected T[] elementos;
+    protected int tamanho;
 
     @SuppressWarnings("unchecked")
     public EstruturaEstatica(int capacidade) {
@@ -12,6 +12,10 @@ class EstruturaEstatica<T> {
 
     public EstruturaEstatica() {
         this(10);
+    }
+
+    public boolean estaVazia() {
+        return this.tamanho == 0;
     }
 
     /**
