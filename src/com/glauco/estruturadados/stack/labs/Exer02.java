@@ -41,6 +41,8 @@ public class Exer02 {
             }
         }
 
+        sc.close();
+
         System.out.println("Desempilhando todos os números da pilha par");
         
         while(!par.estaVazia()) {
