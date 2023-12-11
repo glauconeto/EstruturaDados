@@ -4,16 +4,29 @@ class EstruturaEstatica<T> {
     protected T[] elementos;
     protected int tamanho;
 
+    /**
+     * Método construtor passando a capacidade, definindo o tamanho com 0.
+     * 
+     * @param int capacidade
+     */
     @SuppressWarnings("unchecked")
     public EstruturaEstatica(int capacidade) {
         this.elementos = (T[]) new Object[capacidade];
         this.tamanho = 0;
     }
 
+    /**
+     * Método construtor que define a capacidade com 10. 
+     */
     public EstruturaEstatica() {
         this(10);
     }
 
+    /**
+     * Verifica se a estrutura está vazia.
+     * 
+     * @return tamanho
+     */
     public boolean estaVazia() {
         return this.tamanho == 0;
     }
