@@ -8,7 +8,7 @@ public class Exer01 {
         Stack<Integer> pilha = new Stack<Integer>();
         Scanner sc = new Scanner(System.in);
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i <= 10; i++) {
             System.out.println("Digite um número: ");
 
             int num = sc.nextInt();
