@@ -16,6 +16,7 @@ public class List<T> {
      * 
      * @param capacidade
      */
+    @SuppressWarnings("unchecked")
     public List(int capacidade) {
         this.elementos = (T[]) new Object[capacidade];
         this.tamanho = 0;
@@ -79,6 +80,7 @@ public class List<T> {
     /**
      * Aumenta o dobro da capacidade atual do array.
      */
+    @SuppressWarnings("unchecked")
     private void aumentaCapacidade() {
         if (this.tamanho == this.elementos.length) {
             T[] elementosNovos = (T[]) new Object[this.elementos.length * 2];

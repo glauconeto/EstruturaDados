@@ -1,5 +1,7 @@
 package com.glauco.estruturadados.stack;
 
+import com.glauco.estruturadados.base.EstruturaEstatica;
+
 public class Stack<T> extends EstruturaEstatica<T> {
     /**
      * Método construtor, definindo a capacidade com 10.

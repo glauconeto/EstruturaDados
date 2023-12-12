@@ -1,5 +1,7 @@
 package com.glauco.estruturadados.stack;
 
+import com.glauco.estruturadados.base.EstruturaEstatica;
+
 public class Lista2<T> extends EstruturaEstatica<T> {
     public Lista2() {
         super();
