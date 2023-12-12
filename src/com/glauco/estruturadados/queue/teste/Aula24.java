@@ -1,0 +1,17 @@
+package com.glauco.estruturadados.queue.teste;
+
+import com.glauco.estruturadados.queue.QueuePriority;
+
+public class Aula24 {
+    public static void main(String[] args) {
+        QueuePriority<Paciente> fila = new QueuePriority<>();
+
+        fila.enfileira(new Paciente("A", 2));
+		fila.enfileira(new Paciente("C", 1));
+		fila.enfileira(new Paciente("B", 3));
+
+        System.out.println(fila);
+		System.out.println(fila.desenfileira());
+		System.out.println(fila);
+    }
+}
