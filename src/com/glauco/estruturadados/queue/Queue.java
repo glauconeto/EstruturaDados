@@ -29,7 +29,7 @@ public class Queue<T> extends EstruturaEstatica<T> {
     }
 
     /**
-     * Método para verificar o próximo da fila.
+     * Método para verificar o primeiro elemento da fila.
      */
     public T espiar() {
         if (this.estaVazia()) {
