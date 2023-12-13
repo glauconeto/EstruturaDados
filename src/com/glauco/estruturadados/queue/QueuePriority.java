@@ -1,6 +1,7 @@
 package com.glauco.estruturadados.queue;
 
 public class QueuePriority<T> extends Queue<T> {
+    @SuppressWarnings("unchecked")
     public void enfileira(T elemento) {
         Comparable<T> chave = (Comparable<T>) elemento;
         int i;
