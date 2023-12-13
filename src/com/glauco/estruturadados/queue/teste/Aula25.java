@@ -6,7 +6,6 @@ import java.util.Queue;
 
 public class Aula25 {
     public static void main(String[] args) {
-		
 		Queue<Paciente> filaComPrioridade = new PriorityQueue<>(
 				new Comparator<Paciente>() {
 					@Override
@@ -20,6 +19,5 @@ public class Aula25 {
 		filaComPrioridade.add(new Paciente("B", 1));
 		
 		System.out.println(filaComPrioridade);
-
 	}
 }
