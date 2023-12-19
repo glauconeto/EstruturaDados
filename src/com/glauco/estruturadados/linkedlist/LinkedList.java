@@ -1,12 +1,20 @@
-package com.glauco.estruturadados.linkedList;
+package com.glauco.estruturadados.linkedlist;
 
 public class LinkedList<T> {
     private Node<T> inicio;
+    private Node<T> ultimo;
     private int tamanho;
 
     public void adiciona(T elemento) {
         Node<T> celula = new Node<T>(elemento);
-        this.inicio = celula;
+
+        if (this.tamanho == 0) {
+            this.inicio = celula;
+        } else {
+            this.ultimo.setProximo(celula);
+        }
+
+        this.ultimo = celula;
         this.tamanho++;
     }
 

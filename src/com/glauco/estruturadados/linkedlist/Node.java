@@ -1,4 +1,4 @@
-package com.glauco.estruturadados.linkedList;
+package com.glauco.estruturadados.linkedlist;
 
 public class Node<T> {
     private T elemento;
