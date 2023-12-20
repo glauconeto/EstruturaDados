@@ -1,10 +1,24 @@
 package com.glauco.estruturadados.linkedlist;
 
 public class LinkedList<T> {
+    /**
+     * Elemento de início.
+     */
     private Node<T> inicio;
+    /**
+     * Último elemento.
+     */
     private Node<T> ultimo;
+    /**
+     * Tamanho da lista.
+     */
     private int tamanho;
 
+    /**
+     * Método para adicionar elemento.
+     * 
+     * @param T elemento
+     */
     public void adiciona(T elemento) {
         Node<T> celula = new Node<T>(elemento);
 
@@ -17,10 +31,18 @@ public class LinkedList<T> {
         this.tamanho++;
     }
 
+    /**
+     * Retorna o tamanho da lista.
+     * 
+     * @return tamanho
+     */
     public int getTamanho() {
         return this.tamanho;
     }
 
+    /**
+     * Método para limpar a lista.
+     */
     public void limpa() {
         for (Node<T> atual = this.inicio; atual != null;) {
             Node<T> proximo = atual.getProximo();
@@ -34,6 +56,9 @@ public class LinkedList<T> {
         this.tamanho = 0;
     }
 
+    /**
+     * Método toString para mostrar a lista.
+     */
     @Override
     public String toString() {
         if (this.tamanho == 0) {
