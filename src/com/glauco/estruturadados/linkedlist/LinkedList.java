@@ -22,10 +22,11 @@ public class LinkedList<T> {
     public void adiciona(T elemento) {
         Node<T> celula = new Node<T>(elemento);
 
-        if (this.tamanho == 0)
+        if (this.tamanho == 0) {
             this.inicio = celula;
-        else
+        } else {
             this.ultimo.setProximo(celula);
+        }
 
         this.ultimo = celula;
         this.tamanho++;
@@ -56,6 +57,39 @@ public class LinkedList<T> {
         this.tamanho = 0;
     }
 
+    private Node<T> buscaNo(int posicao) {
+        if (!(posicao >= 0 && posicao <= this.tamanho)) {
+            throw new IllegalArgumentException("Posição não existe");
+        }
+
+        Node<T> noAtual = this.inicio;
+
+        for (int i = 0; i < posicao; i++) {
+            noAtual = noAtual.getProximo();
+        }
+
+        return noAtual;
+    }
+
+    public T buscaPorPosicao(int posicao) {
+        return this.buscaNo(posicao).getElemento();
+    }
+
+    public int busca(T elemento) {
+        Node<T> noAtual = this.inicio;
+        int pos = 0;
+
+        while (noAtual != null) {
+            if (noAtual.getElemento().equals(elemento))
+                return pos;
+
+            pos++;
+            noAtual = noAtual.getProximo();
+        }
+
+        return -1;
+    }
+
     /**
      * Método toString para mostrar a lista.
      */
@@ -66,21 +100,15 @@ public class LinkedList<T> {
         }
 
         StringBuilder builder = new StringBuilder("[");
-        Node<T> atual = this.inicio;
+        // builder.append("ListaEncadeada [inicio=").append(inicio).append("]");
 
+        Node<T> atual = this.inicio;
         for (int i = 0; i < this.tamanho - 1; i++) {
-           builder.append(atual.getElemento()).append(", ");
-           atual.getProximo(); 
+            builder.append(atual.getElemento()).append(", ");
+            atual = atual.getProximo();
         }
 
         builder.append(atual.getElemento()).append("]");
-
-        /* builder.append(atual.getElemento()).append(", ");
-
-        * while (atual.getProximo() != null) {
-        *     atual = atual.getProximo();
-        * } 
-        */
 
         return builder.toString();
     }
