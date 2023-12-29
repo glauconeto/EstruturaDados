@@ -1,5 +1,7 @@
 package com.glauco.estruturadados.linkedlist;
 
+import javax.management.RuntimeErrorException;
+
 public class LinkedList<T> {
     /**
      * Elemento de início.
@@ -62,6 +64,22 @@ public class LinkedList<T> {
             noAnterior.setProximo(novoNo);
             this.tamanho++;
         }
+    }
+
+    public T removeInicio() {
+        if (this.tamanho == 0) {
+            throw new RuntimeException("Lista está vazia");
+        }
+
+        T removido = this.inicio.getElemento();
+        this.inicio = this.inicio.getProximo();
+        this.tamanho--;
+
+        if (this.tamanho == 0) {
+            this.ultimo = null;
+        }
+
+        return removido;
     }
 
     /**
