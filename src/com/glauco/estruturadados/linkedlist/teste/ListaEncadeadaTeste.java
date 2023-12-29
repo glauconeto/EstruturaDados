@@ -4,7 +4,35 @@ import com.glauco.estruturadados.linkedlist.LinkedList;
 
 public class ListaEncadeadaTeste {
     public static void main(String[] args) {
-        testesIniciais();
+        // testesIniciais();
+        // adicionaInicio();
+        adicionaPosicao();
+    }
+
+    public static void adicionaPosicao() {
+        LinkedList<Integer> lista = new LinkedList<>();
+        // lista.adiciona(-1, 1);
+        lista.adiciona(1);
+        lista.adiciona(2);
+        lista.adiciona(4);
+
+        // lista.adiciona(5, 0);
+
+        lista.adiciona(0, 0); // 0, 1, 2, 4
+        lista.adiciona(4, 5); // 0, 1, 2, 4, 5
+        lista.adiciona(2, 3); // 0, 1, 2, 3, 4, 5
+
+        System.out.println(lista);
+    }
+
+    public static void adicionaInicio() {
+        LinkedList<Integer> lista = new LinkedList<>();
+
+        lista.adicionaInicio(3);
+        lista.adicionaInicio(2);
+        lista.adicionaInicio(1); // 1, 2, 3
+
+        System.out.println(lista);
     }
 
     public static void testesIniciais() {
@@ -36,7 +64,8 @@ public class ListaEncadeadaTeste {
         System.out.println(lista.buscaPorPosicao(1));
         System.out.println(lista.buscaPorPosicao(2));
         // System.out.println(lista.buscaPorPosicao(-1));
-        // System.out.println(lista.buscaPorPosicao(-1));
         // System.out.println(lista.buscaPorPosicao(4));
+
+
     }
 }

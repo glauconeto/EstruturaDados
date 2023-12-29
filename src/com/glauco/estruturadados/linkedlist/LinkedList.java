@@ -20,7 +20,7 @@ public class LinkedList<T> {
      * @param T elemento
      */
     public void adiciona(T elemento) {
-        Node<T> celula = new Node<T>(elemento);
+        Node<T> celula = new Node<>(elemento);
 
         if (this.tamanho == 0) {
             this.inicio = celula;
@@ -30,6 +30,38 @@ public class LinkedList<T> {
 
         this.ultimo = celula;
         this.tamanho++;
+    }
+
+    public void adicionaInicio(T elemento) {
+        if (this.tamanho == 0) {
+            Node<T> novoNo = new Node<>(elemento);
+            this.inicio = novoNo;
+            this.ultimo = novoNo;
+            
+        } else {
+            Node<T> novoNo = new Node<>(elemento, this.inicio);
+            this.inicio = novoNo;
+        }
+
+        this.tamanho++;
+    }
+
+    public void adiciona(int posicao, T elemento) {
+        if (posicao < 0 || posicao > this.tamanho) {
+            throw new IllegalArgumentException("Posição inválida");
+        }
+
+        if (posicao == 0) { // Está vazia
+            this.adicionaInicio(elemento);
+        } else if (posicao == this.tamanho)
+            this.adiciona(elemento);
+        else { // Meio
+            Node<T> noAnterior = buscaNo(posicao);
+            Node<T> proximo = noAnterior.getProximo();
+            Node<T> novoNo = new Node<>(elemento, proximo);
+            noAnterior.setProximo(novoNo);
+            this.tamanho++;
+        }
     }
 
     /**
@@ -58,15 +90,13 @@ public class LinkedList<T> {
     }
 
     private Node<T> buscaNo(int posicao) {
-        if (!(posicao >= 0 && posicao <= this.tamanho)) {
+        if (!(posicao >= 0 && posicao <= this.tamanho))
             throw new IllegalArgumentException("Posição não existe");
-        }
 
         Node<T> noAtual = this.inicio;
 
-        for (int i = 0; i < posicao; i++) {
+        for (int i = 0; i < posicao; i++) 
             noAtual = noAtual.getProximo();
-        }
 
         return noAtual;
     }
@@ -95,14 +125,12 @@ public class LinkedList<T> {
      */
     @Override
     public String toString() {
-        if (this.tamanho == 0) {
+        if (this.tamanho == 0)
             return "[]";
-        }
 
         StringBuilder builder = new StringBuilder("[");
-        // builder.append("ListaEncadeada [inicio=").append(inicio).append("]");
-
         Node<T> atual = this.inicio;
+
         for (int i = 0; i < this.tamanho - 1; i++) {
             builder.append(atual.getElemento()).append(", ");
             atual = atual.getProximo();
