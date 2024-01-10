@@ -1,7 +1,5 @@
 package com.glauco.estruturadados.linkedlist;
 
-import javax.management.RuntimeErrorException;
-
 public class LinkedList<T> {
     /**
      * Elemento de início.
@@ -82,6 +80,53 @@ public class LinkedList<T> {
         return removido;
     }
 
+    public T removeFinal() {
+        if (this.tamanho == 0) {
+            throw new RuntimeException("Lista está vazia.");
+        }
+
+        if (this.tamanho == 1) {
+            return this.removeInicio();
+        }
+
+        Node<T> penultimoNo = this.buscaNo(this.tamanho - 2);
+        T removido = penultimoNo.getProximo().getElemento();
+        penultimoNo.setProximo(null);
+
+        this.ultimo = penultimoNo;
+        this.tamanho--;
+
+        return removido;
+    }
+
+    private boolean posicaoNaoExiste(int posicao) {
+        return !(posicao >= 0 && posicao <= this.tamanho);
+    }
+
+    public T remove(int posicao) {
+        if (this.posicaoNaoExiste(posicao)) {
+            throw new IllegalArgumentException("Posição não existe.");
+        }
+
+        if (posicao == 0) {
+            return this.removeInicio();
+        }
+
+        if (posicao == this.tamanho - 1) {
+            return this.removeFinal();
+        }
+
+        Node<T> noAnterior = this.buscaNo(posicao - 1);
+        Node<T> atual = noAnterior.getProximo();
+        Node<T> proximo = atual.getProximo();
+
+        noAnterior.setProximo(proximo);
+        atual.setProximo(null);
+        this.tamanho--;
+
+        return atual.getElemento();
+    }
+
     /**
      * Retorna o tamanho da lista.
      * 
@@ -108,13 +153,15 @@ public class LinkedList<T> {
     }
 
     private Node<T> buscaNo(int posicao) {
-        if (!(posicao >= 0 && posicao <= this.tamanho))
+        if (this.posicaoNaoExiste(posicao)) {
             throw new IllegalArgumentException("Posição não existe");
+        }
 
         Node<T> noAtual = this.inicio;
 
-        for (int i = 0; i < posicao; i++) 
+        for (int i = 0; i < posicao; i++) {
             noAtual = noAtual.getProximo();
+        }
 
         return noAtual;
     }
@@ -128,8 +175,9 @@ public class LinkedList<T> {
         int pos = 0;
 
         while (noAtual != null) {
-            if (noAtual.getElemento().equals(elemento))
+            if (noAtual.getElemento().equals(elemento)) {
                 return pos;
+            }
 
             pos++;
             noAtual = noAtual.getProximo();
@@ -143,8 +191,9 @@ public class LinkedList<T> {
      */
     @Override
     public String toString() {
-        if (this.tamanho == 0)
+        if (this.tamanho == 0) {
             return "[]";
+        }
 
         StringBuilder builder = new StringBuilder("[");
         Node<T> atual = this.inicio;

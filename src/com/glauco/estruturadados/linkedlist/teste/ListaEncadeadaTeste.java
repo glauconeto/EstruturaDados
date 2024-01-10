@@ -7,13 +7,25 @@ public class ListaEncadeadaTeste {
         // testesIniciais();
         // adicionaInicio();
         // adicionaPosicao();
-        removeInicio();
+        // removeInicio();
+        removePosicao();
+    }
+
+    private static void removePosicao() {
+        LinkedList<Integer> lista = new LinkedList<>();
+
+        lista.adiciona(1);
+        lista.adiciona(2);
+        lista.adiciona(3);
+        lista.adiciona(4);
+        lista.adiciona(5);
+
+        System.out.println("Elemento removido: " + lista.remove(1));
+        System.out.println("Lista: " + lista);
     }
 
     public static void removeInicio() {
         LinkedList<Integer> lista = new LinkedList<>();
-
-        // lista.removeInicio();
 
         lista.adiciona(1);
         lista.adiciona(2);
@@ -33,7 +45,6 @@ public class ListaEncadeadaTeste {
         lista.adiciona(1);
         lista.adiciona(2);
         lista.adiciona(4);
-
         // lista.adiciona(5, 0);
 
         lista.adiciona(0, 0); // 0, 1, 2, 4
@@ -82,8 +93,5 @@ public class ListaEncadeadaTeste {
         System.out.println(lista.buscaPorPosicao(1));
         System.out.println(lista.buscaPorPosicao(2));
         // System.out.println(lista.buscaPorPosicao(-1));
-        // System.out.println(lista.buscaPorPosicao(4));
-
-
     }
 }
