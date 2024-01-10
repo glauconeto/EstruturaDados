@@ -1,6 +1,6 @@
 package com.glauco.estruturadados.linkedlist;
 
-public class LinkedList<T> {
+public class ListaEncadeada<T> {
     /**
      * Elemento de início.
      */

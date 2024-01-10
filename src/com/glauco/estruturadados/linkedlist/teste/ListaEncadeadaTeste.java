@@ -1,6 +1,8 @@
 package com.glauco.estruturadados.linkedlist.teste;
 
-import com.glauco.estruturadados.linkedlist.LinkedList;
+import java.util.LinkedList;
+
+import com.glauco.estruturadados.linkedlist.ListaEncadeada;
 
 public class ListaEncadeadaTeste {
     public static void main(String[] args) {
@@ -11,8 +13,30 @@ public class ListaEncadeadaTeste {
         removePosicao();
     }
 
-    private static void removePosicao() {
+    public static void testeLinkedList() {
         LinkedList<Integer> lista = new LinkedList<>();
+
+        lista.add(1);
+        lista.addFirst(0);
+        lista.addLast(3);
+
+        System.out.println(lista.contains(1));
+
+        lista.add(2, 2);
+
+        System.out.println(lista);
+
+        lista.remove();
+        System.out.println(lista);
+
+        lista.remove(0);
+        lista.removeFirst();
+        lista.removeLast();
+        System.out.println(lista);
+    }
+
+    private static void removePosicao() {
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
 
         lista.adiciona(1);
         lista.adiciona(2);
@@ -25,7 +49,7 @@ public class ListaEncadeadaTeste {
     }
 
     public static void removeInicio() {
-        LinkedList<Integer> lista = new LinkedList<>();
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
 
         lista.adiciona(1);
         lista.adiciona(2);
@@ -40,7 +64,7 @@ public class ListaEncadeadaTeste {
     }
 
     public static void adicionaPosicao() {
-        LinkedList<Integer> lista = new LinkedList<>();
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
         // lista.adiciona(-1, 1);
         lista.adiciona(1);
         lista.adiciona(2);
@@ -55,7 +79,7 @@ public class ListaEncadeadaTeste {
     }
 
     public static void adicionaInicio() {
-        LinkedList<Integer> lista = new LinkedList<>();
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
 
         lista.adicionaInicio(3);
         lista.adicionaInicio(2);
@@ -65,7 +89,7 @@ public class ListaEncadeadaTeste {
     }
 
     public static void testesIniciais() {
-        LinkedList<Integer> lista = new LinkedList<>();
+        ListaEncadeada<Integer> lista = new ListaEncadeada<>();
         lista.adiciona(1);
         System.out.println("Tamanho = " + lista.getTamanho());
 
